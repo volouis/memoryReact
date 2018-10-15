@@ -7,7 +7,7 @@ const Head = props => (
         <p className="navbar-brand text-light">Memory Game</p>
         <span>You guessed</span>
         <span className="navbar-text text-light">
-            Score: | Top Score:
+            Score: {props.count} | Top Score: {props.highScore}
         </span>
     </nav>
   </div>
