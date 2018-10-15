@@ -1,4 +1,17 @@
 .navbar{
     background-color: rgb(76,55,158);
+    position: fixed;
+    width: 100%;
+}
 
+.guess{
+    font-size: 30px;
+}
+
+#Right{
+    color: rgb(85, 223, 85);
+}
+
+#Wrong{
+    color: red;
 }

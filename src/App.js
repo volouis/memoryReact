@@ -10,7 +10,8 @@ class App extends Component {
   state = {
     friends,
     count: 0,
-    highScore: 0
+    highScore: 0,
+    guess: ""
   }
 
   beenClick = id => {
@@ -18,6 +19,7 @@ class App extends Component {
 
     if(this.state.friends[this.state.friends.findIndex(x => x.id === id)].hit){
       this.restartGame();
+      this.setState({guess: "Wrong"});
     }else{
       this.state.friends[this.state.friends.findIndex(x => x.id === id)].hit = true;
       this.setState((preState, props) => ({
@@ -26,6 +28,7 @@ class App extends Component {
         if(this.state.highScore < this.state.count){
           this.setState({highScore: this.state.count});
         }
+        this.setState({guess: "Right"});
         this.cardRandomizer();
       })
     }
@@ -58,6 +61,7 @@ class App extends Component {
         <Head
           count = {this.state.count}
           highScore = {this.state.highScore}
+          guess = {this.state.guess}
         />
         <Jumbo/>
         <Wrapper>

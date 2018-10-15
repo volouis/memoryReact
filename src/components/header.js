@@ -2,15 +2,13 @@ import React from "react";
 import "./style/header.css"
 
 const Head = props => (
-  <div>
-    <nav className="navbar sticky-top navbar-light bg-secondary text-light">
+    <nav className="navbar">
         <p className="navbar-brand text-light">Memory Game</p>
-        <span>You guessed</span>
+        <span id={props.guess} className="guess" >You guessed {props.guess}!!!</span>
         <span className="navbar-text text-light">
             Score: {props.count} | Top Score: {props.highScore}
         </span>
     </nav>
-  </div>
 );
 
 export default Head;
