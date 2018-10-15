@@ -15,13 +15,16 @@ class App extends Component {
   }
 
   beenClick = id => {
-    console.log(this.state.friends.findIndex(x => x.id === id));
-
     if(this.state.friends[this.state.friends.findIndex(x => x.id === id)].hit){
       this.restartGame();
-      this.setState({guess: "Wrong"});
+      this.setState({"guess": "Wrong"});
+
     }else{
-      this.state.friends[this.state.friends.findIndex(x => x.id === id)].hit = true;
+      var exampleUse = this.state.friends
+      exampleUse[this.state.friends.findIndex(x => x.id === id)].hit = true;
+
+      this.setState({friends: exampleUse})
+
       this.setState((preState, props) => ({
         count: preState.count + 1
       }), () => {
